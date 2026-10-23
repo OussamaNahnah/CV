@@ -1,0 +1,55 @@
+# LaTeX compilation auxiliary and cache files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.loa
+*.lof
+*.log
+*.lot
+*.maf
+*.mtc
+*.mtc*
+*.nav
+*.nlg
+*.nlo
+*.nls
+*.out
+*.pdfsync
+*.ps
+*.run.xml
+*.snm
+*.soc
+*.synctex
+*.synctex.gz
+*.tdo
+*.toc
+*.vrb
+*.xdv
+
+# LaTeX cache directories
+.texpadtmp/
+_minted-*/
+
+# PDFs
+*.pdf
+
+# Preview images generated from PDFs
+page*.png
+
+# Temporary and editor files
+*~
+*.swp
+*.swo
+.DS_Store
+.directory
