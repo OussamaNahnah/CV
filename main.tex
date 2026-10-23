@@ -1,246 +1,141 @@
-\documentclass[10pt,a4paper]{article}
+\documentclass[a4paper,10pt]{article}
 
-% --- Packages ---
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
-\usepackage[sfdefault]{roboto}
-\usepackage[left=1.4cm, right=1.4cm, top=1.3cm, bottom=1.3cm]{geometry}
-\usepackage{xcolor}
-\usepackage{hyperref}
-\usepackage{fontawesome5}
-\usepackage{enumitem}
+\usepackage[left=1.5cm, right=1.5cm, top=1.4cm, bottom=1.4cm]{geometry}
 \usepackage{titlesec}
-\usepackage{parskip}
-\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
 
-% --- Palette de Couleurs Modernes & Professionnelles ---
-\definecolor{primary}{RGB}{14, 56, 122}       % Bleu Marine Profond
-\definecolor{secondary}{RGB}{37, 99, 235}     % Bleu Moderne Accent
-\definecolor{darkgray}{RGB}{45, 55, 72}       % Gris anthracite pour texte principal
-\definecolor{lightgray}{RGB}{100, 116, 139}   % Gris doux pour métadonnées
-\definecolor{linegray}{RGB}{226, 232, 240}    % Ligne de séparation discrète
-\definecolor{tagbg}{RGB}{241, 245, 249}       % Fond des badges / tags
+% Color palette
+\definecolor{primary}{RGB}{15, 23, 42}      % Slate 900
+\definecolor{accent}{RGB}{2, 132, 199}      % Blue 600
+\definecolor{textgray}{RGB}{71, 85, 105}    % Slate 600
 
-% --- Configuration Hyperref ---
-\hypersetup{
-    colorlinks=true,
-    linkcolor=secondary,
-    urlcolor=secondary,
-    pdfauthor={Oussama NAHNAH},
-    pdftitle={CV - Oussama NAHNAH - Doctorant & Développeur Full-Stack},
-    pdfsubject={Curriculum Vitae},
-    pdfkeywords={Algorithmes Distribués, Réseaux, Backend, Laravel, Django, Python, C, Java, SQL}
-}
-
-% --- Formatage des Titres de Section ---
-\titleformat{\section}
-  {\color{primary}\large\bfseries\scshape}
-  {}
-  {0em}
-  {}
-  [{\color{secondary}\titlerule[1pt]}\vspace{-4pt}]
-
-\titlespacing*{\section}{0pt}{9pt}{6pt}
-
-% --- Réglage des Listes ---
-\setlist[itemize]{
-    leftmargin=1.5em,
-    itemsep=2pt,
-    topsep=2pt,
-    parsep=0pt,
-    label={\color{secondary}\small\raisebox{0.1ex}{\faAngleRight}}
-}
-
-% --- Commandes Personnalisées pour les Expériences ---
-\newcommand{\cventry}[4]{
-    \noindent\textbf{\color{primary}#1} \hfill {\color{secondary}\small\textbf{#2}} \\
-    \noindent\textit{\color{darkgray}#3} \hfill {\color{lightgray}\footnotesize\faMapMarker*\ #4}
-    \vspace{2pt}
-}
-
-\newcommand{\cvsubentry}[3]{
-    \noindent\textbf{\color{darkgray}#1} \hfill {\color{lightgray}\footnotesize #2} \\
-    \noindent\textit{\small #3}
-    \vspace{1pt}
-}
-
-\newcommand{\techstack}[1]{
-    \vspace{2pt}
-    \noindent{\small\textbf{\color{primary}\faCogs\ Technologies :} \textit{#1}}
-    \vspace{4pt}
-}
-
+% Typography & Spacing
 \pagestyle{empty}
+\linespread{1.08}
+\setlength{\parindent}{0pt}
+
+% Section style
+\titleformat{\section}{\large\bfseries\color{primary}}{}{0em}{\MakeUppercase}[\vspace{-2pt}\textcolor{accent}{\rule{\textwidth}{1pt}}]
+\titlespacing*{\section}{0pt}{8pt}{5pt}
+
+% Custom list styling
+\setlist[itemize]{leftmargin=1.2em, itemsep=1pt, topsep=1pt}
 
 \begin{document}
 
-% ==============================================================================
-% EN-TÊTE / HEADER
-% ==============================================================================
+% ---------------- HEADER / PROFIL ----------------
 \begin{center}
-    {\Huge \textbf{\color{primary}Oussama NAHNAH}} \\[4pt]
-    {\large \textbf{\color{secondary}Doctorant en Algorithmes Distribués \& Ingénieur Logiciel Full-Stack}} \\[7pt]
-    
-    {\small \color{darkgray}
-        \faMapMarker*\ Clermont-Ferrand, France \quad \textbar \quad
-        \faPhone*\ \href{tel:+33773796145}{+33 7 73 79 61 45} \quad \textbar \quad
-        \faEnvelope\ \href{mailto:oussamanh7@gmail.com}{oussamanh7@gmail.com} \quad \textbar \quad
-        \faGlobe\ \href{https://oussamanh.com}{oussamanh.com}
-    } \\[3pt]
-    {\small \color{darkgray}
-        \faLinkedin\ \href{https://www.linkedin.com/in/oussamanahnah}{linkedin.com/in/oussamanahnah} \quad \textbar \quad
-        \faGithub\ \href{https://github.com/OussamaNahnah}{github.com/OussamaNahnah}
+    {\huge \textbf{\textcolor{primary}{Oussama NAHNAH}}}\\[4pt]
+    \textcolor{textgray}{
+        Aubière, France \enspace$\cdot$\enspace
+        \href{mailto:oussamanh7@gmail.com}{oussamanh7@gmail.com} \enspace$\cdot$\enspace
+        +33 7 73 79 61 45\\[2pt]
+        \href{https://oussamanh.com}{oussamanh.com} \enspace$\cdot$\enspace
+        \href{https://www.linkedin.com/in/oussamanahnah/}{linkedin.com/in/oussamanahnah}
     }
 \end{center}
-
 \vspace{-4pt}
-\begin{quote}
-\centering \footnotesize \color{darkgray}
-Doctorant au laboratoire LIMOS (CNRS) et ingénieur logiciel. Spécialisé dans les algorithmes distribués, la coordination d'essaims de robots et le développement backend robuste (C, Python, PHP/Laravel, Java, PostgreSQL). Solide expérience d'enseignement supérieur (ISIMA, IUT) et réalisations de solutions logicielles complètes pour l'industrie.
-\end{quote}
-\vspace{-6pt}
 
-% ==============================================================================
-% FORMATIONS & DIPLÔMES
-% ==============================================================================
-\section{\faGraduationCap\ Formations \& Diplômes}
+% ---------------- ÉDUCATION ----------------
+\section{Éducation}
 
-\cventry{Doctorat en Informatique -- Algorithmes Distribués}{2024 -- Présent}{LIMOS (UMR 6158 CNRS) -- Université Clermont Auvergne}{Clermont-Ferrand, France}
+\textbf{Doctorat en Algorithmes Distribués} \hfill \textbf{2024 -- présent}\\
+\textcolor{textgray}{Université Clermont Auvergne \hfill Clermont-Ferrand, France}
+
+\vspace{3pt}
+
+\textbf{Master en Réseaux et Systèmes Distribués} \hfill \textbf{2019 -- 2021}\\
+\textcolor{textgray}{Université Ferhat Abbas Sétif 1 \hfill Sétif, Algérie}
+
+\vspace{3pt}
+
+\textbf{Licence en Systèmes d’Information Informatiques} \hfill \textbf{2016 -- 2019}\\
+\textcolor{textgray}{Université Ferhat Abbas Sétif 1 \hfill Sétif, Algérie}
+
+% ---------------- TRAVAUX PUBLIÉS ----------------
+\section{Travaux publiés}
+
+\noindent\textbf{Synthesizing Algorithms to Avoid an Obstacle with a Swarm of Robots} \hfill \href{https://sancy.iut.uca.fr/~durand/docs/ICDCS26.pdf}{\textbf{IEEE ICDCS 2026}}\par
+\noindent\textcolor{textgray}{K. Altisen, A. Durand, P. Lafourcade, \textbf{O. Nahnah}}\par
+
+\vspace{3pt}
+
+\noindent\textbf{Éviter un obstacle avec des robots lumineux : synthèse d’algorithmes} \hfill \href{https://uca.hal.science/hal-05600384v1/file/algotel.pdf}{\textbf{ALGOTEL 2026}}\par
+\noindent\textcolor{textgray}{K. Altisen, A. Durand, P. Lafourcade, \textbf{O. Nahnah}}\par
+
+\vspace{3pt}
+
+\noindent\textbf{SLAK: Secure Lightweight Scheme for Authentication and Key-Agreement in IoT} \hfill \href{https://doi.org/10.1504/IJICS.2024.137741}{\textbf{IJICS 2024}}\par
+\noindent\textcolor{textgray}{\textbf{O. Nahnah}, S. Cherbal}\par
+
+\vspace{3pt}
+
+\noindent\textbf{Authentification dans l’IoT} \hfill \href{https://overleaf.com/read/cmbwcyphtjbn#285e0a}{\textbf{Mémoire de Master 2021}}\par
+\noindent\textcolor{textgray}{\textbf{O. Nahnah} \enspace$|$\enspace Université Ferhat Abbas Sétif 1}\par
+
+% ---------------- EXPÉRIENCE ----------------
+\section{Expérience}
+
+\textbf{Chargé de TP -- R2.06 Exploitation d'une Base de Données (BUT Info)} \hfill \textbf{Janv. 2025}\\
+\textcolor{textgray}{IUT Clermont Auvergne \hfill 30h $|$ Clermont-Ferrand, France}
 \begin{itemize}
-    \item Thèse sur l'exploration perpétuelle de grilles finies avec obstacles par des essaims de robots lumineux (modèle \textit{Look-Compute-Move}).
-    \item Synthèse automatisée d'algorithmes distribués, vérification par simulation et preuves formelles de correction.
-    \item Encadrement : Dr. Anaïs Durand et Pr. Pascal Lafourcade.
+    \item Encadrement de travaux pratiques sur l’exploitation de bases de données.
+    \item Suivi des étudiants dans la mise en œuvre de requêtes SQL.
 \end{itemize}
 
-\cventry{Master Réseaux et Systèmes Distribués}{2019 -- 2021}{Université Ferhat Abbas Sétif 1}{Sétif, Algérie}
+\vspace{2pt}
+
+\textbf{Travailleur indépendant} \hfill \textbf{Août 2023 -- Sept. 2024}
 \begin{itemize}
-    \item Spécialisation en systèmes répartis, sécurité réseau et protocoles de communication IoT.
-    \item \textbf{Mémoire de recherche :} Conception et validation formelle (logique BAN \& AVISPA) du protocole cryptographique léger SLAK.
+    \item Études sur une application SaaS.
+    \item Conception d’interfaces UI/UX intuitives.
+    \item Développement backend avec Laravel et frontend avec Flutter.
 \end{itemize}
 
-\cventry{Licence Systèmes d'Information Informatiques}{2016 -- 2019}{Université Ferhat Abbas Sétif 1}{Sétif, Algérie}
+\vspace{2pt}
+
+\textbf{Développeur Backend} \enspace$|$\enspace \textcolor{textgray}{Fintechracy (Télétravail)} \hfill \textbf{Juin 2023 -- Août 2023}\\
+\textcolor{textgray}{Sétif, Algérie}
 \begin{itemize}
-    \item Fondements de l'informatique : algorithmique avancée, génie logiciel, bases de données relationnelles, programmation orientée objet.
+    \item Étude du projet d'application de l'entreprise.
+    \item Développement du backend en Laravel.
 \end{itemize}
 
-% ==============================================================================
-% EXPÉRIENCE EN ENSEIGNEMENT SUPÉRIEUR
-% ==============================================================================
-\section{\faChalkboardTeacher\ Enseignement Supérieur (ISIMA \& IUT)}
+\vspace{2pt}
 
-\cventry{ISIMA (Institut Supérieur d'Informatique, de Modélisation et de leurs Applications)}{2026 -- Présent}{Chargé de Travaux Pratiques (TP)}{Clermont-Ferrand, France}
+\textbf{Développeur PHP} \enspace$|$\enspace \textcolor{textgray}{Smart Vision (Présentiel)} \hfill \textbf{Mai 2023 -- Juin 2023}\\
+\textcolor{textgray}{Sétif, Algérie}
 \begin{itemize}
-    \item \textbf{Réseaux 1 :} Administration réseau sous Linux, adressage IPv4/IPv6, routage, sous-réseaux (CIDR), et programmation de sockets bas niveau en C (TCP/UDP, architecture client-serveur).
-    \item \textbf{Réseaux 2 :} Déploiement d'architectures complètes : DHCP, routage dynamique (OSPF, BGP, RIP), spanning-tree (STP), NAT/PAT, VPN IPSec et simulations sur Cisco Packet Tracer.
-    \item \textbf{Serveurs Web \& APIs :} Supervision de projets backend en Django REST Framework (DRF) : conception d'APIs REST, sérialiseurs, authentification par tokens, migrations et intégration de bases de données.
+    \item Modification du code ERP personnalisé et gestion des requêtes SQL.
+    \item Création de tables éditables personnalisées à partir de données JSON via DataTables.
 \end{itemize}
 
-\cventry{IUT Clermont Auvergne (Département BUT Informatique)}{Janv. 2025 -- Juin 2025}{Chargé de Travaux Pratiques (TP) -- R2.06 Exploitation de Bases de Données}{Clermont-Ferrand, France}
+\vspace{2pt}
+
+\textbf{Développeur Junior} \enspace$|$\enspace \textcolor{textgray}{Adh Protecleans (Hybride)} \hfill \textbf{Sept. 2021 -- Juin 2022}\\
+\textcolor{textgray}{Sétif, Algérie}
 \begin{itemize}
-    \item Encadrement de promotions d'étudiants en BUT Informatique sur la conception et l'administration de bases de données relationnelles.
-    \item Écriture de requêtes SQL complexes, jointures multi-tables, procédures stockées en PL/pgSQL, optimisation et visualisations.
+    \item Conception et implémentation d'une API avec un tableau de bord administrateur.
+    \item Maintenance du site web de l'entreprise (frontend et backend).
 \end{itemize}
 
-% ==============================================================================
-% EXPÉRIENCES PROFESSIONNELLES EN ENTREPRISE
-% ==============================================================================
-\section{\faBriefcase\ Expériences Professionnelles \& Ingénierie}
+% ---------------- COMPÉTENCES ----------------
+\section{Compétences}
 
-\cventry{Développeur Indépendant / Consultant Logiciel}{Août 2023 -- Sept. 2024}{Freelance}{Clermont-Ferrand / International}
-\begin{itemize}
-    \item Études fonctionnelles et conception architecturale d'une application SaaS modulaire.
-    \item Développement backend d'APIs REST hautement scalables en Laravel (PHP).
-    \item Conception des parcours et interfaces utilisateurs modernes sous Figma et développement cross-platform avec Flutter.
-\end{itemize}
-\techstack{PHP, Laravel, Flutter, REST API, MySQL, Figma, Git}
+\begin{tabular}{@{}p{4.2cm} p{11.8cm}@{}}
+    \textbf{Langages :} & PHP, Java, JavaScript, HTML, CSS, RestAPI \\[2pt]
+    \textbf{Outils \& Logiciels :} & JavaFX, Figma, Git, Postman, Linux, Android Studio \\[2pt]
+    \textbf{Langues :} & Arabe (courant), Anglais (professionnel), Français (professionnel) \\[2pt]
+    \textbf{Compétences générales :} & Résolution de problèmes, Motivation, Création de relations, Communication
+\end{tabular}
 
-\cventry{Développeur Backend}{Juin 2023 -- Août 2023}{Fintechracy}{Télétravail / Sétif, Algérie}
-\begin{itemize}
-    \item Analyse des exigences techniques et modélisation de la base de données pour la plateforme fintech.
-    \item Développement de l'architecture backend et de services RESTful sécurisés sous Laravel.
-\end{itemize}
-\techstack{PHP, Laravel, Architecture MVC, REST API, MySQL}
-
-\cventry{Développeur PHP / SQL}{Mai 2023 -- Juin 2023}{SARL SMARTVISION TECHNOLOGY}{Sétif, Algérie}
-\begin{itemize}
-    \item Maintenance évolutive et refactorisation du code source d'un ERP d'entreprise personnalisé.
-    \item Optimisation des requêtes SQL complexes et manipulation de structures JSON.
-    \item Création d'interfaces interactives avec tableaux de données personnalisés et éditables via DataTables et jQuery.
-\end{itemize}
-\techstack{PHP, MySQL, SQL Avancé, DataTables, jQuery, JavaScript}
-
-\cventry{Développeur Junior Full-Stack}{Sept. 2021 -- Juin 2022}{ADH PROTECLEANS ALGERIA}{Sétif, Algérie}
-\begin{itemize}
-    \item Conception et implémentation d'une API REST sécurisée pour l'application mobile et le site web (PHP OOP, MVC, PDO).
-    \item Développement d'un tableau de bord administratif complet avec Filament pour la gestion dynamique des données.
-    \item Maintenance et évolution de la plateforme web de l'entreprise (front-end et back-end).
-\end{itemize}
-\techstack{PHP, POO, MVC, Filament, REST API, PDO, MySQL, HTML5/CSS3}
-
-\cventry{Développeur Logiciel (Freelance)}{Juil. 2021 -- Sept. 2021}{ANESRIF (Agence Nationale d'Études Ferroviaires)}{Sétif, Algérie}
-\begin{itemize}
-    \item Conception et développement complet du logiciel d'entreprise « \textbf{Archify} » dédié à la gestion d'archives ferroviaires.
-    \item Interface utilisateur graphique moderne et fluide avec JavaFX et FXML.
-    \item Moteur de recherche multicritère optimisé, transmission de documents et export dynamique des données au format Excel.
-\end{itemize}
-\techstack{Java, JavaFX, FXML, SQLite, Apache POI (Export Excel)}
-
-% ==============================================================================
-% PUBLICATIONS SCIENTIFIQUES (PEER-REVIEWED)
-% ==============================================================================
-\section{\faBook\ Publications Scientifiques}
-
-\noindent\textbf{\color{primary}Synthesizing Algorithms to Avoid an Obstacle with a Swarm of Robots} \hfill {\color{secondary}\textbf{Juin 2026}} \\
-\textit{\small IEEE International Conference on Distributed Computing Systems (\textbf{IEEE ICDCS 2026})} \hfill {\small\href{https://sancy.iut.uca.fr/~durand/docs/ICDCS26.pdf}{\faFilePdf\ Consulter l'article}}
-\begin{itemize}
-    \item Méthode automatisée pour synthétiser des algorithmes distribués résolvant l'exploration perpétuelle de grilles finies avec obstacles par des robots lumineux myopes (modèle LCM), avec preuve formelle généralisée.
-\end{itemize}
-
-\noindent\textbf{\color{primary}Éviter un obstacle avec des robots lumineux : synthèse d'algorithmes} \hfill {\color{secondary}\textbf{Juin 2026}} \\
-\textit{\small 28es Rencontres Francophones sur les Aspects Algorithmiques des Télécommunications (\textbf{ALGOTEL 2026})} \hfill {\small\href{https://uca.hal.science/hal-05600384v1/file/algotel.pdf}{\faFilePdf\ Consulter l'article}}
-\begin{itemize}
-    \item Étude d'algorithmes de coordination d'essaims de robots lumineux en présence d'obstacles avec validation par simulateur.
-\end{itemize}
-
-\noindent\textbf{\color{primary}SLAK: Secure lightweight scheme for authentication and key-agreement in IoT} \hfill {\color{secondary}\textbf{Janv. 2024}} \\
-\textit{\small International Journal of Information and Computer Security (\textbf{Inderscience IJICS}), Vol. 23, No. 2} \hfill {\small\href{https://doi.org/10.1504/IJICS.2024.137741}{\faExternalLink*\ DOI: 10.1504/IJICS.2024.137741}}
-\begin{itemize}
-    \item Protocole d'authentification mutuelle et échange de clés pour l'IoT (ECC, hash, XOR), validé sous logique BAN et AVISPA.
-\end{itemize}
-
-% ==============================================================================
-% PROJETS SIGNIFICATIFS
-% ==============================================================================
-\section{\faLaptopCode\ Projets Significatifs}
-
-\noindent\textbf{\color{primary}Archify -- Système de Gestion et Suivi d'Archives} \hfill {\color{secondary}\small\faGithub\ \href{https://github.com/OussamaNahnah/Archify}{github.com/OussamaNahnah/Archify}} \\
-Logiciel desktop de gestion d'archives avec transmission de documents, recherche multicritères et export Excel. \textit{(JavaFX, FXML, SQLite)}
-
-\noindent\textbf{\color{primary}Outil de Synthèse \& Simulateur d'Essaims de Robots} \hfill {\color{secondary}\small Recherche Doctorale LIMOS} \\
-Conception d'un outil de synthèse et de simulation graphique pour évaluer les protocoles distribués d'exploration avec obstacles. \textit{(Python, C++, Algorithmique Distribuée)}
-
-\noindent\textbf{\color{primary}MyPortfolio -- Générateur de Portfolios Professionnels} \hfill {\color{secondary}\small\faGithub\ \href{https://github.com/OussamaNahnah/MyPortfolio}{github.com/OussamaNahnah/MyPortfolio}} \\
-Plateforme web avec tableau de bord administrateur et client, et API REST complète. \textit{(PHP, Laravel, REST API, MySQL)}
-
-\noindent\textbf{\color{primary}Mobile Network Simulation} \hfill {\color{secondary}\small\faGithub\ \href{https://github.com/OussamaNahnah/Mobile-Network-Simulation}{github.com/OussamaNahnah/Mobile-Network-Simulation}} \\
-Simulateur graphique de réseaux de télécommunications mobiles et couverture d'antennes. \textit{(Java, JavaFX, Réseaux Mobiles)}
-
-\noindent\textbf{\color{primary}P2P Share \& Instant Chat} \hfill {\color{secondary}\small\faGithub\ \href{https://github.com/OussamaNahnah/P2P-Share}{github.com/OussamaNahnah/P2P-Share}} \\
-Application Android de messagerie et de partage de fichiers direct en peer-to-peer sur réseau local sans serveur. \textit{(Android, Java)}
-
-% ==============================================================================
-% COMPÉTENCES TECHNIQUES & CERTIFICATIONS
-% ==============================================================================
-\section{\faTools\ Compétences Techniques \& Certifications}
-
-\begin{tabularx}{\textwidth}{@{}r X@{}}
-    \textbf{\color{primary}Langages de programmation :} & C, Python, PHP (Laravel, Symfony), Java, Rust, JavaScript, SQL (PostgreSQL, SQLite, MySQL), Bash / Shell, HTML5, CSS3 \\
-    \textbf{\color{primary}Systèmes \& Réseaux :} & Linux (Debian, Ubuntu), Sockets bas niveau C (TCP/UDP), OSPF, BGP, RIP, STP, NAT/PAT, IPSec, Cisco Packet Tracer \\
-    \textbf{\color{primary}Frameworks \& Technologies :} & Laravel, Django REST Framework, Filament, Flutter, JavaFX, jQuery, DataTables, Docker, Git / GitHub, Postman, \LaTeX \\
-    \textbf{\color{primary}Sécurité \& Méthodes :} & Cryptographie IoT (ECC, HMAC), Logique BAN, AVISPA, Burp Suite, Sécurité Web (OWASP, SQLi), Architecture MVC, POO \\
-    \textbf{\color{primary}Certifications professionnelles :} & \textbf{Cisco Packet Tracer} (LinkedIn), \textbf{PostgreSQL} (LinkedIn), \textbf{Rust Essential Training} (LinkedIn), \textbf{Offensive Hacking \& SQLi Attacks} (ComproAvi School) \\
-    \textbf{\color{primary}Langues :} & \textbf{Arabe} (Langue maternelle), \textbf{Français} (Courant / Professionnel), \textbf{Anglais} (Courant / Professionnel)
-\end{tabularx}
+% ---------------- ENGAGEMENT / AUTRES ----------------
+\section{Autres}
+Travail bénévole dans différentes organisations.
 
 \end{document}
