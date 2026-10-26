@@ -3,19 +3,25 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
-\usepackage[left=1.5cm, right=1.5cm, top=1.4cm, bottom=1.4cm]{geometry}
+\usepackage[left=1.5cm, right=1.5cm, top=1.4cm, bottom=1.4cm, footskip=0.55cm]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{xcolor}
+\usepackage{qrcode}
 
 % Color palette
 \definecolor{primary}{RGB}{15, 23, 42}      % Slate 900
 \definecolor{accent}{RGB}{2, 132, 199}      % Blue 600
 \definecolor{textgray}{RGB}{71, 85, 105}    % Slate 600
 
+\usepackage{fancyhdr}
+
 % Typography & Spacing
-\pagestyle{empty}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\cfoot{\textcolor{textgray}{\footnotesize\thepage\,/\,2}}
 \linespread{1.08}
 \setlength{\parindent}{0pt}
 
@@ -29,7 +35,8 @@
 \begin{document}
 
 % ---------------- HEADER / PROFIL ----------------
-\begin{center}
+\noindent
+\begin{minipage}[c]{\dimexpr\textwidth - 1.8cm\relax}
     {\huge \textbf{\textcolor{primary}{Oussama NAHNAH}}}\\[4pt]
     \textcolor{textgray}{
         Aubière, France \enspace$\cdot$\enspace
@@ -39,8 +46,13 @@
         \href{https://github.com/OussamaNahnah}{github.com/OussamaNahnah} \enspace$\cdot$\enspace
         \href{https://www.linkedin.com/in/oussamanahnah/}{linkedin.com/in/oussamanahnah}
     }
-\end{center}
-\vspace{-2pt}
+\end{minipage}\hfill
+\begin{minipage}[c]{1.5cm}
+    \raggedleft
+    \qrcode[height=1.5cm]{https://oussamanh.com}\\[2pt]
+    \makebox[1.5cm][c]{\textcolor{textgray}{\tiny\textbf{Portfolio web}}}
+\end{minipage}
+\vspace{6pt}
 
 % ---------------- PROFIL ----------------
 \noindent{\small Doctorant en 3\textsuperscript{e} année au laboratoire \textbf{LIMOS} (CNRS / UCA), mes recherches portent sur la synthèse d'algorithmes distribués pour essaims de robots lumineux, avec un fort intérêt pour le développement d'outils open-source et de preuves de concept (PoC) tels que \textbf{RoASt}. Fort de 3 ans d'expérience préalable comme développeur logiciel, j'associe rigueur scientifique théorique et conception de systèmes complets (Rust, Laravel).}
@@ -171,7 +183,7 @@
 % ---------------- PROJETS ----------------
 \section{Projets}
 
-\noindent\textbf{RoASt} \enspace$|$\enspace \textcolor{textgray}{Rust, Algorithmique Distribuée, Robotique} \hfill \href{https://luminousrobots.github.io/RoASt-Docs/pages/overview.html}{\textbf{Documentation}}\par
+\noindent\textbf{RoASt} \enspace$|$\enspace \textcolor{textgray}{Rust, Algorithmique Distribuée, Robotique} \hfill \href{https://luminousrobots.github.io/RoASt-Docs/pages/overview.html}{\textbf{Doc :} \textcolor{textgray}{\small luminousrobots.github.io/RoASt-Docs}}\par
 \noindent{\small Synthétiseur et simulateur d'algorithmes distribués pour essaims de robots lumineux en grille avec obstacle.}\par
 \vspace{2.5pt}
 
